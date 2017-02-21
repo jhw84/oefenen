@@ -11,15 +11,15 @@ import Cocoa
 class ViewController: NSViewController {
     var counter:Int = 0
 
+    func rfloat()->CGFloat {
+        return CGFloat(Float(arc4random()) / Float(UINT32_MAX))
+    }
+    
     @IBOutlet weak var counterField: NSTextField!
     @IBOutlet weak var colBox: NSBox!
     @IBAction func pushedButton(_ sender: NSButton) {
-        let r:CGFloat = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
-        let g:CGFloat = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
-        let b:CGFloat = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
-        let a:CGFloat = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
-        
-        colBox.fillColor = NSColor(red:r,green:g,blue:b,alpha:a)
+       
+        colBox.fillColor = NSColor(red:rfloat(),green:rfloat(),blue:rfloat(),alpha:rfloat())
         
         counter+=1
         counterField.stringValue = "\(counter)"
