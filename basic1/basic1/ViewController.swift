@@ -9,18 +9,19 @@
 import Cocoa
 
 class ViewController: NSViewController {
+    
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var colBox: NSBox!
+    @IBAction func pushedButton(_ sender: NSButton) {
+        let r:CGFloat = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
+        let g:CGFloat = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
+        let b:CGFloat = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
+        let a:CGFloat = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
+        
+        colBox.fillColor = NSColor(red:r,green:g,blue:b,alpha:a)
+        
     }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
+ 
 
 
 }
